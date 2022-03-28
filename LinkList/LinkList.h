@@ -47,15 +47,15 @@ public:
 
 	ListNodePosi<T> insertAsFirst(T const& e); // 将e当作p首节点插入
 	ListNodePosi<T> insertAsLast(T const& e); // 将e当作末节点插入
-	ListNodePosi<T> insertAfter(ListNodePosi<T>p, T const& e); // 在p之后插入e
-	ListNodePosi<T> insertBefore(T const& e，ListNodePosi<T>p); // 在p之前插入e
+	ListNodePosi<T> insert(ListNodePosi<T>p, T const& e); // 在p之后插入e
+	ListNodePosi<T> insert(T const& e, ListNodePosi<T> p); // 在p之前插入e
 
 	T remove(ListNodePosi<T> p); //删除合法位置p处的节点,返回被删除节点
 
 	void merge(LinkList<T>& L) { merge(header->succ, _size, L, L.header->succ, L._size); } // 全列表归并
 
-	void sort(ListNodePosi<T> p, int n); // 列表区间排序
-	void sort() { sort(first(), _size); } //列表整体排序
+	//void sort(ListNodePosi<T> p, int n); // 列表区间排序
+	//void sort() { sort(first(), _size); } //列表整体排序
 
 	int deduplicate(); // 无序去重
 	int uniquify(); // 有序去重
@@ -66,4 +66,11 @@ public:
 	template<VST>
 	void traverse(VST&);// 遍历，依次实施visit操作（函数对象，可全局性修改）
 
+	/*
+	一些代写的链表算法：（不必完全写出，思路要有）
+	1. 单链表实现一元多项式相加
+	2. 用数组构造一个有序单链表
+	3. 循环链表
+	4. ...
+	*/
 };
